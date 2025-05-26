@@ -4,12 +4,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>AbdelqaderStructure</AssemblyName>
+    <RootNamespace>AbdelqaderStructure</RootNamespace>
   </PropertyGroup>
-	
-	<PropertyGroup>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<DocumentationFile>bin/$(Configuration)/$(TargetFramework)/$(MSBuildProjectName).xml</DocumentationFile>
-	</PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin/$(Configuration)/$(TargetFramework)/$(MSBuildProjectName).xml</DocumentationFile>
+  </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Models\Statistics\**" />
