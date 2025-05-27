@@ -10,8 +10,11 @@ public static class RoleTypeExtensions
         {
             case StaticRole.SUPER_ADMIN:
                 return "super-admin";
+            case StaticRole.Admin:
+                return "Admin";
+            
             default:
-                return "UNDEFINED";
+                return "User";
         }
     }
 }

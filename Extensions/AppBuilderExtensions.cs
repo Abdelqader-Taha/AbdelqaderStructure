@@ -79,7 +79,7 @@ public static class AppBuilderExtensions
             opt.InjectStylesheet("/swagger/swagger-dark.css");
             opt.InjectJavascript("/swagger/theme-switcher.js");
             
-            opt.DocumentTitle = "Orphans";
+            opt.DocumentTitle = "Structure";
             opt.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
             opt.DisplayRequestDuration();
             

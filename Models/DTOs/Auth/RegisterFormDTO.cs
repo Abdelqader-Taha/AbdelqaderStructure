@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using FluentValidation;
+using OrphanSystem.Models.Entities;
 
 namespace OrphanSystem.Models.DTOs.Auth;
 
@@ -16,6 +17,9 @@ public class RegisterFormDTO
     
     [StringLength(30, MinimumLength = 6)]
     public string Password { get; set; }
+    public string Name { get; set; }
+    public StaticRole? Role { get; set; } 
+
 }
 
 public class RegisterFormValidator : AbstractValidator<RegisterFormDTO>

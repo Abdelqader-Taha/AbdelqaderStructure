@@ -35,6 +35,6 @@ public class User : BaseEntity
 public enum StaticRole
 {
     SUPER_ADMIN = 0,
- 
-
+    Admin=1,
+    User=2
 }

@@ -24,33 +24,35 @@ public class AuthService : BaseService, IAuthService
     {
     }
 
-    public async Task<Response<string>> Register(RegisterFormDTO form)
-    {
-        await ValidateRegister(form);
-        var user = await CreateUser(form);
-        var token = JwtToken.GenToken(user.Id, user.StaticRole.ToRoleString());
-        return new Response<string>(token, null, 200);
-    }
+        public async Task<Response<string>> Register(RegisterFormDTO form)
+        {
+            await ValidateRegister(form);
+            var user = await CreateUser(form);
+            var token = JwtToken.GenToken(user.Id, user.StaticRole.ToRoleString());
+            return new Response<string>(token, null, 200);
+        }
 
-    private async Task ValidateRegister(RegisterFormDTO form)
-    {
-        var emailOrPhoneIsTaken = await _context.Users.AnyAsync(u =>
-            (form.Email == u.Email) ||
-            (form.PhoneCountryCode == u.PhoneCountryCode && form.Phone == u.Phone));
-        if (emailOrPhoneIsTaken)
-            ErrResponseThrower.Unauthorized();
-    }
+        private async Task ValidateRegister(RegisterFormDTO form)
+        {
+            var emailOrPhoneIsTaken = await _context.Users.AnyAsync(u =>
+                (form.Email == u.Email) ||
+                (form.PhoneCountryCode == u.PhoneCountryCode && form.Phone == u.Phone));
+            if (emailOrPhoneIsTaken)
+                ErrResponseThrower.Unauthorized();
+        }
 
     private async Task<User> CreateUser(RegisterFormDTO form)
     {
         using var hmac = new HMACSHA512();
         var user = new User
         {
+            Name = form.Name,
             Email = form.Email,
             Phone = form.Phone,
             PhoneCountryCode = form.PhoneCountryCode,
             PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(form.Password)),
-            PasswordSalt = hmac.Key
+            PasswordSalt = hmac.Key,
+            StaticRole = form.Role ?? StaticRole.User 
         };
 
         await _context.Users.AddAsync(user);
@@ -60,6 +62,8 @@ public class AuthService : BaseService, IAuthService
     }
 
     public async Task<Response<LoginResponseDTO>> Login(LoginFormDTO form)
+{
+    try
     {
         User user;
         if (form.Email != null)
@@ -76,12 +80,12 @@ public class AuthService : BaseService, IAuthService
         }
 
         if (user == null)
-            ErrResponseThrower.Unauthorized();
+            return new Response<LoginResponseDTO>(null, "User not found or unauthorized.", 401);
 
         using var hmac = new HMACSHA512(user.PasswordSalt);
         var dtoHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(form.Password));
         if (!user.PasswordHash.SequenceEqual(dtoHash))
-            ErrResponseThrower.Unauthorized();
+            return new Response<LoginResponseDTO>(null, "Password is incorrect.", 401);
 
         var token = JwtToken.GenToken(user.Id, user.StaticRole.ToRoleString());
 
@@ -91,6 +95,12 @@ public class AuthService : BaseService, IAuthService
         var responseDto = new LoginResponseDTO(user.Id, user.StaticRole.ToRoleString(), token, user.Name);
         return new Response<LoginResponseDTO>(responseDto, null, 200);
     }
+    catch (Exception ex)
+    {
+        return new Response<LoginResponseDTO>(null, "An unexpected error occurred.", 500);
+    }
+}
+
 
 
     public async Task ResetPassword(Guid userId, ResetPasswordFormDTO form)
