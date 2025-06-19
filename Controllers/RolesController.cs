@@ -5,6 +5,7 @@ using OrphanSystem.Models.DTOs;
 using OrphanSystem.ActionFilters;
 using OrphanSystem.Helpers;
 using OrphanSystem.Services;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace OrphanSystem.Controllers;
 
@@ -19,7 +20,14 @@ public class RolesController : BaseController
 	#region CRUDs
 	[TypeFilter(typeof(SoftDeleteAccessFilterActionFilter))]
 	[HttpGet]
-	public async Task<ActionResult<Response<PagedList<RoleDTO>>>> GetAll([FromQuery] RoleFilter filter) =>
+	[Tags("Roles")]
+
+    [HttpGet("{id}")]
+    [SwaggerOperation(
+            Summary = "get specific role by id ",
+            Description = "this is the description  you type here what  you want here"
+        )]
+    public async Task<ActionResult<Response<PagedList<RoleDTO>>>> GetAll([FromQuery] RoleFilter filter) =>
 		Ok(await _rolesService.GetAll(filter));
 
 	[HttpGet("{id}")]

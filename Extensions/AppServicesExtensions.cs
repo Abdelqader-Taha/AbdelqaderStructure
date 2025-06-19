@@ -15,6 +15,7 @@ using OrphanSystem.Helpers;
 using OrphanSystem.Services;
 using OrphanSystem.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using VotingSystem.Extensions;
 
 namespace OrphanSystem.Extensions;
 
@@ -106,6 +107,9 @@ public static class AppServicesExtensions
     {
         services.AddSwaggerGen(opt =>
         {
+            opt.AddSwaggerTags();
+            opt.EnableAnnotations();
+
             opt.SwaggerDoc(
                 name: "Main",
                 new OpenApiInfo
