@@ -1,5 +1,3 @@
-using System.Security.Cryptography;
-using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -7,8 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using OrphanSystem.Data;
 using OrphanSystem.Models.Entities;
 
+using System.Security.Cryptography;
+using System.Text;
 
-namespace OrphanSystem.Helpers;
+
+namespace SolarPanelApi.Helpers;
 
 public class Seeder
 {
@@ -25,23 +26,24 @@ public class Seeder
         {
             var user = new User
             {
-                StaticRole = StaticRole.SUPER_ADMIN,
+                StaticRole = StaticRole.SuperAdmin,
                 Email = email,
-                Phone = "7727633485",
+                Phone = "0000000000",
                 PhoneCountryCode = "+964",
-                Name = "Abdelqader",
+                Name = "SuperAdmin",
+                IsProtected = true,
             };
 
 
 
             using var hmac = new HMACSHA512();
-            user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("string"));
+            user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("SuperAdmin"));
             user.PasswordSalt = hmac.Key;
 
             await _masterDbContext.Users.AddAsync(user);
         }
 
-        
+
         await _masterDbContext.SaveChangesAsync();
 
     }

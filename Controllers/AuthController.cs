@@ -5,6 +5,8 @@ using OrphanSystem.Helpers;
 using OrphanSystem.Models.DTOs.Auth;
 using OrphanSystem.Null;
 using OrphanSystem.Services;
+using SolarPanelApi.Models.DTOs.Auth.UserDTOs;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace OrphanSystem.Controllers
 {
@@ -21,6 +23,40 @@ namespace OrphanSystem.Controllers
             _phoneNumberNormalizer = phoneNumberNormalizer;
         }
 
+
+
+        [HttpGet("Get-All-Users")]
+        public async Task<IActionResult> GetAll([FromQuery] Filter filter)
+        {
+            var response = await _authService.GetAll(filter);
+            return StatusCode(response.StatusCode, response);
+        }
+
+
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateUserForm form)
+        {
+            form.Id = id; // Ensure the ID is assigned
+            var result = await _authService.Update(form);
+            return StatusCode(result.StatusCode, result);
+        }
+
+
+     
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var result = await _authService.Delete(id);
+            if (result.StatusCode == 404)
+                return NotFound(result.Msg);
+
+            if (result.StatusCode == 401)
+                return Forbid(result.Msg);
+
+            return Ok(result.Msg);
+
+        }
         #region Register
         [HttpPost("register")]
         public async Task<ActionResult<Response<string>>> Register([FromBody] RegisterFormDTO form)

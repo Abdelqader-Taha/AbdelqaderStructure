@@ -7,6 +7,7 @@ using OrphanSystem.Data;
 using OrphanSystem.Extensions;
 using OrphanSystem.Helpers;
 using VotingSystem.Extensions;
+using SolarPanelApi.Helpers;
 
 #region App Builder
 

@@ -1,13 +1,16 @@
-using System.Security.Cryptography;
-using System.Text;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using OrphanSystem.Data;
+using OrphanSystem.Extensions;
 using OrphanSystem.Helpers;
+using OrphanSystem.Models.DTOs;
 using OrphanSystem.Models.DTOs.Auth;
 using OrphanSystem.Models.Entities;
-using OrphanSystem.Extensions;
 using OrphanSystem.Null;
+using SolarPanelApi.Models.DTOs.Auth.UserDTOs;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace OrphanSystem.Services;
 
@@ -16,6 +19,9 @@ public interface IAuthService
     Task<Response<LoginResponseDTO>> Login(LoginFormDTO form);
     Task<Response<string>> Register(RegisterFormDTO form);
     Task ResetPassword(Guid userId, ResetPasswordFormDTO form);
+    Task<Response<PagedList<UsersDTO>>> GetAll(Filter filter);
+    Task<Response<string>> Update(UpdateUserForm form);
+    Task<Response<string>> Delete(Guid id);
 }
 
 public class AuthService : BaseService, IAuthService
@@ -24,7 +30,92 @@ public class AuthService : BaseService, IAuthService
     {
     }
 
-        public async Task<Response<string>> Register(RegisterFormDTO form)
+    public async Task<Response<PagedList<UsersDTO>>> GetAll(Filter filter)
+    {
+        var query = _context.Users
+            .WhereBaseFilter(filter)
+            .OrderByCreationDate();
+
+        if (!string.IsNullOrWhiteSpace(filter.Email))
+        {
+            query = query.Where(u => u.Email.Contains(filter.Email));
+        }
+
+        var result = await query
+            .ProjectTo<UsersDTO>(_mapper.ConfigurationProvider)
+            .Paginate(filter);
+
+        return new Response<PagedList<UsersDTO>>(result, null, 200);
+    }
+
+
+    public async Task<Response<string>> Update(UpdateUserForm form)
+    {
+        // Check if email is used by another user
+        var emailExists = await _context.Users
+            .AnyAsync(u => u.Email == form.Email && u.Id != form.Id);
+
+        if (emailExists)
+        {
+            return new Response<string>(null, "This email is already in use by another user.", 400);
+        }
+
+        // Check if phone is used
+        var phoneExists = await _context.Users
+            .AnyAsync(u =>
+                u.Phone == form.Phone &&
+                u.PhoneCountryCode == form.PhoneCountryCode &&
+                u.Id != form.Id);
+
+        if (phoneExists)
+        {
+            return new Response<string>(null, "This phone number is already in use by another user.", 400);
+        }
+
+        try
+        {
+            await _context.UpdateWithMapperOrException<User, UpdateUserForm>(form, _mapper);
+            return new Response<string>("User updated successfully.", null, 200);
+        }
+        catch (DbUpdateException)
+        {
+            return new Response<string>(null, "Database error while updating user. Please try again.", 500);
+        }
+        catch (Exception)
+        {
+            return new Response<string>(null, "An unexpected error occurred during update.", 500);
+        }
+    }
+
+
+
+    public async Task<Response<string>> Delete(Guid id)
+    {
+        var user = await _context.Users
+            .Where(u => u.Id == id && !u.IsDeleted)
+            .FirstOrDefaultAsync();
+
+        if (user == null)
+            return new Response<string>(null, "User Not Found Or Deleted", 404);
+
+        if (user.IsProtected)
+            return new Response<string>(null, "This user is protected and cannot be deleted.", 403);
+
+        await user.Delete(_context);
+        _context.Update(user);
+        await _context.SaveChangesAsync();
+
+        return new Response<string>("User soft-deleted successfully.", null, 200);
+    }
+
+
+
+
+
+
+
+
+    public async Task<Response<string>> Register(RegisterFormDTO form)
         {
             await ValidateRegister(form);
             var user = await CreateUser(form);
@@ -52,7 +143,7 @@ public class AuthService : BaseService, IAuthService
             PhoneCountryCode = form.PhoneCountryCode,
             PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(form.Password)),
             PasswordSalt = hmac.Key,
-            StaticRole = form.Role ?? StaticRole.User 
+            StaticRole = form.Role ?? StaticRole.User, // Default to User if no role is provided
         };
 
         await _context.Users.AddAsync(user);

@@ -15,6 +15,8 @@ public class User : BaseEntity
     
     [JsonIgnore] public byte[] PasswordHash { get; set; }
     [JsonIgnore] public byte[] PasswordSalt { get; set; }
+    public bool IsProtected { get; set; } = false;
+
     #endregion
 
     public Lang Lang { get; set; }
@@ -34,7 +36,7 @@ public class User : BaseEntity
 
 public enum StaticRole
 {
-    SUPER_ADMIN = 0,
+    SuperAdmin = 0,
     Admin=1,
     User=2
 }
