@@ -6,7 +6,7 @@ namespace SolarPanelApi.Models.DTOs.Auth.UserDTOs
 {
     public class UsersDTO : BaseDTO
     {
-        // Note there  is Two UsersDTO do not use the other one for the auth 
+        // Note there  is Two UsersDTO do not use the other one Its for the auth 
         // Note  this dto for the get and update and edit 
         public StaticRole? StaticRole { get; set; }
 

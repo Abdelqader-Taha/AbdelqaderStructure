@@ -14,7 +14,7 @@ public static class RoleTypeExtensions
                 return "Admin";
             
             default:
-                return "UNKNOWN";
+                return "User";
         }
     }
 }
