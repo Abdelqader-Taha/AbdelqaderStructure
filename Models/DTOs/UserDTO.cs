@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using FluentValidation;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Models.DTOs;
+namespace AbdelqaderStructure.Models.DTOs;
 
 public class UserDTO : BaseDTO
 {

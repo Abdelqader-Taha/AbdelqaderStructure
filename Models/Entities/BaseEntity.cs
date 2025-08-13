@@ -1,7 +1,7 @@
-using OrphanSystem.Data;
+using AbdelqaderStructure.Data;
 using System.ComponentModel.DataAnnotations;
 
-namespace OrphanSystem.Models.Entities;
+namespace AbdelqaderStructure.Models.Entities;
 
 public class BaseEntity
 {

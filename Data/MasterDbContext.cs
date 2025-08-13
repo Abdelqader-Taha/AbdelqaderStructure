@@ -2,11 +2,11 @@ using System.Reflection;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.Entities;
 
 
 
-namespace OrphanSystem.Data;
+namespace AbdelqaderStructure.Data;
 
 public class MasterDbContext : DbContext
 {
@@ -22,6 +22,7 @@ public class MasterDbContext : DbContext
     public DbSet<Role> Roles { get; set; }
     public DbSet<Permission> Permissions { get; set; }
     public DbSet<Notification> Notifications { get; set; }
+    public DbSet<Teacher> Teachers { get; set; }
  
 
 

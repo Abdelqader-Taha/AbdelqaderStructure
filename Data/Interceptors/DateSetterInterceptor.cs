@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Data.Interceptors;
+namespace AbdelqaderStructure.Data.Interceptors;
 
 public class DateSetterInterceptor : SaveChangesInterceptor
 {

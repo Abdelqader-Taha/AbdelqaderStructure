@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace OrphanSystem.Controllers
+namespace AbdelqaderStructure.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

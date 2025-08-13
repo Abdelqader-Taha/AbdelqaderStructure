@@ -1,11 +1,11 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using OrphanSystem.Extensions;
-using OrphanSystem.Models.DTOs;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Extensions;
+using AbdelqaderStructure.Models.DTOs;
+using AbdelqaderStructure.Models.Entities;
 
 
-namespace OrphanSystem.Helpers;
+namespace AbdelqaderStructure.Helpers;
 
 public class AutoMapperProfile : Profile
 {

@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace OrphanSystem.ActionFilters;
+namespace AbdelqaderStructure.ActionFilters;
 
 public class FileNameValidationActionFilter : IActionFilter
 {

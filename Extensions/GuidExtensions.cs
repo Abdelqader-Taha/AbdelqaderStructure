@@ -1,4 +1,4 @@
-namespace OrphanSystem.Extensions;
+namespace AbdelqaderStructure.Extensions;
 
 public static class GuidExtensions
 {

@@ -1,8 +1,8 @@
 using System.Net.Http.Headers;
 using System.Text.Json;
-using OrphanSystem.Null;
+using AbdelqaderStructure.Null;
 
-namespace OrphanSystem.Helpers;
+namespace AbdelqaderStructure.Helpers;
 
 public class OAuthGoogleClient
 {

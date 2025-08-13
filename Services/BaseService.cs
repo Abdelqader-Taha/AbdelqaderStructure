@@ -1,7 +1,7 @@
 using AutoMapper;
-using OrphanSystem.Data;
+using AbdelqaderStructure.Data;
 
-namespace OrphanSystem.Services;
+namespace AbdelqaderStructure.Services;
 
 public class BaseService
 {

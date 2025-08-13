@@ -11,13 +11,13 @@ using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using OrphanSystem.Helpers;
-using OrphanSystem.Services;
-using OrphanSystem.Swagger;
+using AbdelqaderStructure.Helpers;
+using AbdelqaderStructure.Services;
+using AbdelqaderStructure.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using VotingSystem.Extensions;
+using AbdelqaderStructure.Extensions;
 
-namespace OrphanSystem.Extensions;
+namespace AbdelqaderStructure.Extensions;
 
 public static class AppServicesExtensions
 {

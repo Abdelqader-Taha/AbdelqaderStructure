@@ -2,12 +2,12 @@ using System.Linq.Expressions;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.Models.DTOs;
-using OrphanSystem.Models.Entities;
-using OrphanSystem.Null;
+using AbdelqaderStructure.Models.DTOs;
+using AbdelqaderStructure.Models.Entities;
+using AbdelqaderStructure.Null;
 
 
-namespace OrphanSystem.Data;
+namespace AbdelqaderStructure.Data;
 
 public static class MasterDbContextCrudCreateExtensions
 {

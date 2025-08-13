@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using FluentValidation;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Models.DTOs.Auth;
+namespace AbdelqaderStructure.Models.DTOs.Auth;
 
 public class RegisterFormDTO
 {

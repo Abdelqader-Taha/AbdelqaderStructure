@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.Data;
-using OrphanSystem.Extensions;
+using AbdelqaderStructure.Data;
+using AbdelqaderStructure.Extensions;
 
-namespace OrphanSystem.ActionFilters;
+namespace AbdelqaderStructure.ActionFilters;
 
 public class AdminDynamicAuthActionFilter : IAsyncActionFilter
 {

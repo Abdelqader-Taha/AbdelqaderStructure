@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Models.DTOs;
+namespace AbdelqaderStructure.Models.DTOs;
 
 public class NotificationDTO : BaseDTO
 {

@@ -1,4 +1,4 @@
-namespace OrphanSystem.Services;
+namespace AbdelqaderStructure.Services;
 
 public class PhoneNumberNormalizer
 {

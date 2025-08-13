@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace OrphanSystem.Models.Entities.Configurations;
+namespace AbdelqaderStructure.Models.Entities.Configurations;
 
 public class UserEntityConfiguration : IEntityTypeConfiguration<User>
 {

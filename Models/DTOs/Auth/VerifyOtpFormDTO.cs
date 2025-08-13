@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace OrphanSystem.Models.DTOs.Auth;
+namespace AbdelqaderStructure.Models.DTOs.Auth;
 
 public class VerifyOtpFormDTO
 {

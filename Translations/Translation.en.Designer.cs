@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OrphanSystem.Translations {
+namespace AbdelqaderStructure.Translations {
     using System;
     
     
@@ -28,7 +28,7 @@ namespace OrphanSystem.Translations {
         internal static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("OrphanSystem.Translations.Translation_ar", typeof(Translation_ar).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("AbdelqaderStructure.Translations.Translation_ar", typeof(Translation_ar).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

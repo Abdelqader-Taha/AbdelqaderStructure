@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using OrphanSystem.Helpers;
-using OrphanSystem.Models.DTOs.Auth;
-using OrphanSystem.Null;
-using OrphanSystem.Services;
-using SolarPanelApi.Models.DTOs.Auth.UserDTOs;
+using AbdelqaderStructure.Helpers;
+using AbdelqaderStructure.Models.DTOs.Auth;
+using AbdelqaderStructure.Null;
+using AbdelqaderStructure.Services;
+using AbdelqaderStructure.Models.DTOs.Auth.UserDTOs;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace OrphanSystem.Controllers
+namespace AbdelqaderStructure.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

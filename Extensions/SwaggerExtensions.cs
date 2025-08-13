@@ -3,7 +3,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Collections.Generic;
 
-namespace VotingSystem.Extensions
+namespace AbdelqaderStructure.Extensions
 {
     //  This is the filter that injects custom Swagger tags
     public class SwaggerTagsDocumentFilter : IDocumentFilter

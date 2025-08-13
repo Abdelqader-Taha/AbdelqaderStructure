@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace OrphanSystem.Helpers;
+namespace AbdelqaderStructure.Helpers;
 
 public static class JwtToken
 {

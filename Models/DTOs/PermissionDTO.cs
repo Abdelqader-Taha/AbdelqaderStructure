@@ -1,4 +1,4 @@
-namespace OrphanSystem.Models.DTOs;
+namespace AbdelqaderStructure.Models.DTOs;
 
 public class PermissionDTO : BaseDTO
 {

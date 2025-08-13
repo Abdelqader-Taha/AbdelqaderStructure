@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace OrphanSystem.Models.Entities;
+namespace AbdelqaderStructure.Models.Entities;
 
 public class User : BaseEntity
 {

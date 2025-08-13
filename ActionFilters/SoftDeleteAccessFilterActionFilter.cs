@@ -2,9 +2,9 @@ using System.Web;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using OrphanSystem.Models.DTOs;
+using AbdelqaderStructure.Models.DTOs;
 
-namespace OrphanSystem.ActionFilters;
+namespace AbdelqaderStructure.ActionFilters;
 
 public class SoftDeleteAccessFilterActionFilter : IActionFilter
 {

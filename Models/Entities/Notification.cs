@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace OrphanSystem.Models.Entities;
+namespace AbdelqaderStructure.Models.Entities;
 
 public class Notification : BaseEntity
 {

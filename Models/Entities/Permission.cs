@@ -1,4 +1,4 @@
-namespace OrphanSystem.Models.Entities;
+namespace AbdelqaderStructure.Models.Entities;
 
 public class Permission : BaseEntity
 {

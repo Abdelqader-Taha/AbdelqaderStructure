@@ -1,6 +1,6 @@
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Extensions;
+namespace AbdelqaderStructure.Extensions;
 
 public static class RoleTypeExtensions
 {

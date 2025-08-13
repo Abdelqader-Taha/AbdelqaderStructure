@@ -1,7 +1,7 @@
 using System.Net;
 using System.Net.Mail;
 
-namespace OrphanSystem.Helpers;
+namespace AbdelqaderStructure.Helpers;
 
 public class GmailSmtp
 {

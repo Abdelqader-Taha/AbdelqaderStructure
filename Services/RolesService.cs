@@ -1,12 +1,12 @@
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using OrphanSystem.Models.DTOs;
-using OrphanSystem.Data;
-using OrphanSystem.Extensions;
-using OrphanSystem.Helpers;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.DTOs;
+using AbdelqaderStructure.Data;
+using AbdelqaderStructure.Extensions;
+using AbdelqaderStructure.Helpers;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Services;
+namespace AbdelqaderStructure.Services;
 
 public interface IRolesService
 {

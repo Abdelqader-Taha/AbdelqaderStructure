@@ -1,6 +1,6 @@
-using OrphanSystem.Null;
+using AbdelqaderStructure.Null;
 
-namespace OrphanSystem.Services;
+namespace AbdelqaderStructure.Services;
 
 public interface IAttachmentsService
 {

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 
-namespace OrphanSystem.Models.DTOs.Auth;
+namespace AbdelqaderStructure.Models.DTOs.Auth;
 
 public class ResetPasswordFormDTO
 {

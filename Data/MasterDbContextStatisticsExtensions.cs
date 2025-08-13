@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Data;
+namespace AbdelqaderStructure.Data;
 
 public static class MasterDbContextStatisticsExtensions
 {

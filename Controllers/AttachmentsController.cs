@@ -2,11 +2,11 @@ using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using OrphanSystem.ActionFilters;
-using OrphanSystem.Helpers;
-using OrphanSystem.Services;
+using AbdelqaderStructure.ActionFilters;
+using AbdelqaderStructure.Helpers;
+using AbdelqaderStructure.Services;
 
-namespace OrphanSystem.Controllers;
+namespace AbdelqaderStructure.Controllers;
 
 [Authorize]
 public class AttachmentsController : BaseController

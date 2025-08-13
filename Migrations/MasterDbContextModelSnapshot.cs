@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using OrphanSystem.Data;
+using AbdelqaderStructure.Data;
 
 #nullable disable
 
-namespace OrphanSystem.Migrations
+namespace AbdelqaderStructure.Migrations
 {
     [DbContext(typeof(MasterDbContext))]
     partial class MasterDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace OrphanSystem.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("OrphanSystem.Models.Entities.LocalizedContent", b =>
+            modelBuilder.Entity("AbdelqaderStructure.Models.Entities.LocalizedContent", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,7 +51,7 @@ namespace OrphanSystem.Migrations
                     b.ToTable("LocalizedContents");
                 });
 
-            modelBuilder.Entity("OrphanSystem.Models.Entities.Notification", b =>
+            modelBuilder.Entity("AbdelqaderStructure.Models.Entities.Notification", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -112,7 +112,7 @@ namespace OrphanSystem.Migrations
                     b.ToTable("Notifications");
                 });
 
-            modelBuilder.Entity("OrphanSystem.Models.Entities.Permission", b =>
+            modelBuilder.Entity("AbdelqaderStructure.Models.Entities.Permission", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -152,7 +152,7 @@ namespace OrphanSystem.Migrations
                     b.ToTable("Permissions");
                 });
 
-            modelBuilder.Entity("OrphanSystem.Models.Entities.Role", b =>
+            modelBuilder.Entity("AbdelqaderStructure.Models.Entities.Role", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -180,7 +180,7 @@ namespace OrphanSystem.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("OrphanSystem.Models.Entities.User", b =>
+            modelBuilder.Entity("AbdelqaderStructure.Models.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -246,14 +246,14 @@ namespace OrphanSystem.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("OrphanSystem.Models.Entities.Notification", b =>
+            modelBuilder.Entity("AbdelqaderStructure.Models.Entities.Notification", b =>
                 {
-                    b.HasOne("OrphanSystem.Models.Entities.User", "Actor")
+                    b.HasOne("AbdelqaderStructure.Models.Entities.User", "Actor")
                         .WithMany("NotificationsSent")
                         .HasForeignKey("ActorId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("OrphanSystem.Models.Entities.User", "Notifier")
+                    b.HasOne("AbdelqaderStructure.Models.Entities.User", "Notifier")
                         .WithMany("NotificationsReceived")
                         .HasForeignKey("NotifierId")
                         .OnDelete(DeleteBehavior.SetNull);
@@ -263,19 +263,19 @@ namespace OrphanSystem.Migrations
                     b.Navigation("Notifier");
                 });
 
-            modelBuilder.Entity("OrphanSystem.Models.Entities.Permission", b =>
+            modelBuilder.Entity("AbdelqaderStructure.Models.Entities.Permission", b =>
                 {
-                    b.HasOne("OrphanSystem.Models.Entities.Role", null)
+                    b.HasOne("AbdelqaderStructure.Models.Entities.Role", null)
                         .WithMany("Permissions")
                         .HasForeignKey("RoleId");
                 });
 
-            modelBuilder.Entity("OrphanSystem.Models.Entities.Role", b =>
+            modelBuilder.Entity("AbdelqaderStructure.Models.Entities.Role", b =>
                 {
                     b.Navigation("Permissions");
                 });
 
-            modelBuilder.Entity("OrphanSystem.Models.Entities.User", b =>
+            modelBuilder.Entity("AbdelqaderStructure.Models.Entities.User", b =>
                 {
                     b.Navigation("NotificationsReceived");
 

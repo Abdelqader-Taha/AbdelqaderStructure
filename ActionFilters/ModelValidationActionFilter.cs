@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using OrphanSystem.Helpers;
+using AbdelqaderStructure.Helpers;
 
-namespace OrphanSystem.ActionFilters;
+namespace AbdelqaderStructure.ActionFilters;
 
 public class ModelValidationActionFilter : IActionFilter
 {

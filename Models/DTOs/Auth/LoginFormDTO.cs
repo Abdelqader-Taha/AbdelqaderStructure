@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using FluentValidation;
 
-namespace OrphanSystem.Models.DTOs.Auth;
+namespace AbdelqaderStructure.Models.DTOs.Auth;
 
 public class LoginFormDTO
 {

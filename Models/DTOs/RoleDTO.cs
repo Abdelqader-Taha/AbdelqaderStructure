@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace OrphanSystem.Models.DTOs;
+namespace AbdelqaderStructure.Models.DTOs;
 
 public class RoleDTO : BaseDTO
 {

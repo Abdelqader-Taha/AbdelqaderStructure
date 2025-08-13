@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.Models.Entities;
-using OrphanSystem.Null;
+using AbdelqaderStructure.Models.Entities;
+using AbdelqaderStructure.Null;
 
-namespace OrphanSystem.Data;
+namespace AbdelqaderStructure.Data;
 
 public static class MasterDbContextValidationExtensions
 {

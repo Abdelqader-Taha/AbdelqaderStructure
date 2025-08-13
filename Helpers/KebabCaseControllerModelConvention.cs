@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace OrphanSystem.Helpers;
+namespace AbdelqaderStructure.Helpers;
 
 public class KebabCaseControllerModelConvention : IOutboundParameterTransformer
 {

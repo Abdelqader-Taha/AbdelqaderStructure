@@ -2,9 +2,9 @@ using System.Globalization;
 using System.Reflection;
 using System.Resources;
 using System.Text.RegularExpressions;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Translations
+namespace AbdelqaderStructure.Translations
 {
     public static class Localizer
     {
@@ -12,7 +12,7 @@ namespace OrphanSystem.Translations
 
         static Localizer()
         {
-            ResourceManager = new ResourceManager("OrphanSystem.Translations.Translation", Assembly.GetExecutingAssembly());
+            ResourceManager = new ResourceManager("AbdelqaderStructure.Translations.Translation", Assembly.GetExecutingAssembly());
         }
         public static string Translate(string key, string culture = null, params string[] args)
         {

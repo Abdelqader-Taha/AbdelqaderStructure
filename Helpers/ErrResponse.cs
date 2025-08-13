@@ -1,8 +1,8 @@
-using OrphanSystem.Translations;
+using AbdelqaderStructure.Translations;
 using System.Data.SqlTypes;
 using System.Text.Json;
 
-namespace OrphanSystem.Null;
+namespace AbdelqaderStructure.Null;
 
 public class ErrResponseException : Exception
 {

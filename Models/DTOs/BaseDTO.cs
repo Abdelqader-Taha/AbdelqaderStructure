@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace OrphanSystem.Models.DTOs;
+namespace AbdelqaderStructure.Models.DTOs;
 
 public class BaseDTO
 {

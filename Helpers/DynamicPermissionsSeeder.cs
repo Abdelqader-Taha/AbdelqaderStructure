@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.ActionFilters;
-using OrphanSystem.Data;
-using OrphanSystem.Extensions;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.ActionFilters;
+using AbdelqaderStructure.Data;
+using AbdelqaderStructure.Extensions;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Helpers;
+namespace AbdelqaderStructure.Helpers;
 
 public class DynamicPermissionsSeeder
 {

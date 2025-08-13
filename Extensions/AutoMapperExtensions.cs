@@ -1,6 +1,6 @@
 using AutoMapper;
 
-namespace OrphanSystem.Extensions;
+namespace AbdelqaderStructure.Extensions;
 
 public static class AutoMapperExtensions
 {

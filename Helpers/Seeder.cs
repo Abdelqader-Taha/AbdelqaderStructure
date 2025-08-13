@@ -2,14 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.Data;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Data;
+using AbdelqaderStructure.Models.Entities;
 
 using System.Security.Cryptography;
 using System.Text;
 
 
-namespace SolarPanelApi.Helpers;
+namespace AbdelqaderStructure.Helpers;
 
 public class Seeder
 {

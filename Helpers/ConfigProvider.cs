@@ -1,4 +1,4 @@
-namespace OrphanSystem.Helpers;
+namespace AbdelqaderStructure.Helpers;
 
 public static class ConfigProvider
 {

@@ -1,8 +1,9 @@
-using System.Security.Claims;
+using AbdelqaderStructure.ActionFilters;
+using AbdelqaderStructure.Helpers;
 using Microsoft.AspNetCore.Mvc;
-using  OrphanSystem.ActionFilters;
+using System.Security.Claims;
 
-namespace OrphanSystem.Controllers;
+namespace AbdelqaderStructure.Controllers;
 
 [TypeFilter(typeof(ModelValidationActionFilter))]
 [TypeFilter(typeof(AdminDynamicAuthActionFilter))]
@@ -23,4 +24,6 @@ public class BaseController : ControllerBase
 
     protected Guid CurId => Guid.Parse(GetClaimValue(ClaimTypes.NameIdentifier));
     protected string CurRole => GetClaimValue(ClaimTypes.Role);
+    protected IActionResult Response<T>(Response<T> result) =>
+     StatusCode(result.StatusCode, result);
 }

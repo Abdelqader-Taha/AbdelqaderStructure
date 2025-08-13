@@ -2,10 +2,10 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.Data;
-using OrphanSystem.Null;
+using AbdelqaderStructure.Data;
+using AbdelqaderStructure.Null;
 
-namespace OrphanSystem.Extensions;
+namespace AbdelqaderStructure.Extensions;
 
 public static class AppBuilderExtensions
 {

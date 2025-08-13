@@ -2,12 +2,12 @@ using FluentValidation.AspNetCore;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
-using OrphanSystem.Data.Interceptors;
-using OrphanSystem.Data;
-using OrphanSystem.Extensions;
-using OrphanSystem.Helpers;
-using VotingSystem.Extensions;
-using SolarPanelApi.Helpers;
+using AbdelqaderStructure.Data.Interceptors;
+using AbdelqaderStructure.Data;
+using AbdelqaderStructure.Extensions;
+using AbdelqaderStructure.Helpers;
+using AbdelqaderStructure.Extensions;
+using AbdelqaderStructure.Helpers;
 
 #region App Builder
 

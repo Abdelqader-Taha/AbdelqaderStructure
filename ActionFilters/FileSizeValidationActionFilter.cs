@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace OrphanSystem.ActionFilters;
+namespace AbdelqaderStructure.ActionFilters;
 
 public class FileSizeValidationActionFilter : IActionFilter
 {

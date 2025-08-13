@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.Helpers;
-using OrphanSystem.Models.DTOs;
+using AbdelqaderStructure.Helpers;
+using AbdelqaderStructure.Models.DTOs;
 
-namespace OrphanSystem.Extensions;
+namespace AbdelqaderStructure.Extensions;
 
 public static class DbSetExtensions
 {

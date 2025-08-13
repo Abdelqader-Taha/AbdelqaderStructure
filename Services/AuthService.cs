@@ -1,18 +1,18 @@
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.Data;
-using OrphanSystem.Extensions;
-using OrphanSystem.Helpers;
-using OrphanSystem.Models.DTOs;
-using OrphanSystem.Models.DTOs.Auth;
-using OrphanSystem.Models.Entities;
-using OrphanSystem.Null;
-using SolarPanelApi.Models.DTOs.Auth.UserDTOs;
+using AbdelqaderStructure.Data;
+using AbdelqaderStructure.Extensions;
+using AbdelqaderStructure.Helpers;
+using AbdelqaderStructure.Models.DTOs;
+using AbdelqaderStructure.Models.DTOs.Auth;
+using AbdelqaderStructure.Models.Entities;
+using AbdelqaderStructure.Null;
+using AbdelqaderStructure.Models.DTOs.Auth.UserDTOs;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace OrphanSystem.Services;
+namespace AbdelqaderStructure.Services;
 
 public interface IAuthService
 {

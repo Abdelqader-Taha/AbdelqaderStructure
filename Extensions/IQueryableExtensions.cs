@@ -1,9 +1,9 @@
 using System.Linq.Expressions;
 using Microsoft.IdentityModel.Tokens;
-using OrphanSystem.Models.DTOs;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.DTOs;
+using AbdelqaderStructure.Models.Entities;
 
-namespace OrphanSystem.Extensions;
+namespace AbdelqaderStructure.Extensions;
 
 public static class IQueryableExtensions
 {

@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OrphanSystem.ActionFilters;
-using OrphanSystem.Helpers;
-using OrphanSystem.Models.DTOs;
-using OrphanSystem.Services;
+using AbdelqaderStructure.ActionFilters;
+using AbdelqaderStructure.Helpers;
+using AbdelqaderStructure.Models.DTOs;
+using AbdelqaderStructure.Services;
 
 
-namespace OrphanSystem.Controllers;
+namespace AbdelqaderStructure.Controllers;
 
 [TypeFilter(typeof(ModelValidationActionFilter))]
 public class PermissionsController : BaseController

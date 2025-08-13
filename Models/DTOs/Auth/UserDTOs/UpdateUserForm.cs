@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using OrphanSystem.Models.DTOs;
-using OrphanSystem.Models.Entities;
+using AbdelqaderStructure.Models.DTOs;
+using AbdelqaderStructure.Models.Entities;
 
-namespace SolarPanelApi.Models.DTOs.Auth.UserDTOs
+namespace AbdelqaderStructure.Models.DTOs.Auth.UserDTOs
 {
     public class UpdateUserForm:BaseUpdateDTO
     {

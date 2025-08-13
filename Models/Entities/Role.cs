@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace OrphanSystem.Models.Entities;
+namespace AbdelqaderStructure.Models.Entities;
 
 public class Role : BaseEntity
 {

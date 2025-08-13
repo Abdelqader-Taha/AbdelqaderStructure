@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using OrphanSystem.Extensions;
+using AbdelqaderStructure.Extensions;
 
-namespace VotingSystem.Extensions
+namespace AbdelqaderStructure.Extensions
 {
     public static class ServiceCollectionExtensions
     {
