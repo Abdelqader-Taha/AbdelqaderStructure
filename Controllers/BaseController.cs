@@ -7,6 +7,7 @@ namespace AbdelqaderStructure.Controllers;
 
 [TypeFilter(typeof(ModelValidationActionFilter))]
 [TypeFilter(typeof(AdminDynamicAuthActionFilter))]
+[TypeFilter(typeof(SoftDeleteAccessFilterActionFilter))]
 [Route("api/[controller]")]
 [ApiController]
 public class BaseController : ControllerBase
